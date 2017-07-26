@@ -34,3 +34,4 @@ xcuserdata
 Pods/
 *.sh
 build/
+release/
