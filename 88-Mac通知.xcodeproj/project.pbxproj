@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		866F47531F20C51D007CEF34 /* NSString+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 866F47521F20C51D007CEF34 /* NSString+extension.m */; };
+		866F47561F20CDBA007CEF34 /* CFNotifyHandleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 866F47551F20CDBA007CEF34 /* CFNotifyHandleTool.m */; };
+		86F015BF1F20919A006DEA6F /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F015BE1F20919A006DEA6F /* ServiceManagement.framework */; };
+		86F015C21F2091E1006DEA6F /* notify-helper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = 86F015BC1F209189006DEA6F /* notify-helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		86F28AFE1F22039D00D8E4DE /* NSLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F28AFD1F22039D00D8E4DE /* NSLineView.m */; };
+		86F28B111F221AA500D8E4DE /* SettingWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F28B0D1F22198200D8E4DE /* SettingWindowController.m */; };
+		86F28B121F221AAE00D8E4DE /* NSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F28AFA1F21F92C00D8E4DE /* NSLabel.m */; };
+		86F28B1C1F25B85700D8E4DE /* SettingWindowController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F28B1B1F25B85700D8E4DE /* SettingWindowController.storyboard */; };
+		86F28B1F1F25B9A400D8E4DE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F28B1E1F25B9A400D8E4DE /* SettingViewController.m */; };
+		86F28B241F25F68800D8E4DE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F28B231F25F68800D8E4DE /* AboutViewController.m */; };
+		86FDA2E61F20525500FB918E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FDA2E51F20525500FB918E /* Assets.xcassets */; };
+		86FDA2F71F20529100FB918E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FDA2F11F20529100FB918E /* AppDelegate.m */; };
+		86FDA2F81F20529100FB918E /* PopContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FDA2F31F20529100FB918E /* PopContentViewController.m */; };
+		86FDA2FC1F2052A200FB918E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FDA2FB1F2052A200FB918E /* main.m */; };
+		A3D63DCED87C53ED633AB7F0 /* libPods-88-Mac通知.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FFA91BCF96D58DDF3B5D45 /* libPods-88-Mac通知.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86F015BB1F209189006DEA6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86F015B71F209188006DEA6F /* notify-helper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86F015A01F209188006DEA6F;
+			remoteInfo = "notify-helper";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86F015C11F2091AC006DEA6F /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				86F015C21F2091E1006DEA6F /* notify-helper.app in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		23007B410A9856505FB1EA15 /* Pods-88-Mac通知.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-88-Mac通知.debug.xcconfig"; path = "Pods/Target Support Files/Pods-88-Mac通知/Pods-88-Mac通知.debug.xcconfig"; sourceTree = "<group>"; };
+		46FFA91BCF96D58DDF3B5D45 /* libPods-88-Mac通知.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-88-Mac通知.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60510EE9C46B073056A7B306 /* Pods-88-Mac通知.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-88-Mac通知.release.xcconfig"; path = "Pods/Target Support Files/Pods-88-Mac通知/Pods-88-Mac通知.release.xcconfig"; sourceTree = "<group>"; };
+		8614D29E1F21E71D00BD6E52 /* CFConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFConsts.h; sourceTree = "<group>"; };
+		866F47511F20C51D007CEF34 /* NSString+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+extension.h"; sourceTree = "<group>"; };
+		866F47521F20C51D007CEF34 /* NSString+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+extension.m"; sourceTree = "<group>"; };
+		866F47541F20CDBA007CEF34 /* CFNotifyHandleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFNotifyHandleTool.h; sourceTree = "<group>"; };
+		866F47551F20CDBA007CEF34 /* CFNotifyHandleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFNotifyHandleTool.m; sourceTree = "<group>"; };
+		86F015B71F209188006DEA6F /* notify-helper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "notify-helper.xcodeproj"; path = "notify-helper/notify-helper.xcodeproj"; sourceTree = "<group>"; };
+		86F015BE1F20919A006DEA6F /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		86F015C01F20919D006DEA6F /* 88-Mac通知.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "88-Mac通知.entitlements"; sourceTree = "<group>"; };
+		86F28AF91F21F92C00D8E4DE /* NSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLabel.h; sourceTree = "<group>"; };
+		86F28AFA1F21F92C00D8E4DE /* NSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLabel.m; sourceTree = "<group>"; };
+		86F28AFC1F22039D00D8E4DE /* NSLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLineView.h; sourceTree = "<group>"; };
+		86F28AFD1F22039D00D8E4DE /* NSLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSLineView.m; sourceTree = "<group>"; };
+		86F28B0C1F22198200D8E4DE /* SettingWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingWindowController.h; sourceTree = "<group>"; };
+		86F28B0D1F22198200D8E4DE /* SettingWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingWindowController.m; sourceTree = "<group>"; };
+		86F28B1B1F25B85700D8E4DE /* SettingWindowController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingWindowController.storyboard; sourceTree = "<group>"; };
+		86F28B1D1F25B9A400D8E4DE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		86F28B1E1F25B9A400D8E4DE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		86F28B221F25F68800D8E4DE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		86F28B231F25F68800D8E4DE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		86FDA2D91F20525500FB918E /* 88-Mac通知.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "88-Mac通知.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86FDA2E51F20525500FB918E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86FDA2EA1F20525500FB918E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86FDA2F01F20529100FB918E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		86FDA2F11F20529100FB918E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		86FDA2F21F20529100FB918E /* PopContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopContentViewController.h; sourceTree = "<group>"; };
+		86FDA2F31F20529100FB918E /* PopContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopContentViewController.m; sourceTree = "<group>"; };
+		86FDA2FB1F2052A200FB918E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86FDA2D61F20525500FB918E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86F015BF1F20919A006DEA6F /* ServiceManagement.framework in Frameworks */,
+				A3D63DCED87C53ED633AB7F0 /* libPods-88-Mac通知.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86F015B81F209188006DEA6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86F015BC1F209189006DEA6F /* notify-helper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86F015BD1F20919A006DEA6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86F015BE1F20919A006DEA6F /* ServiceManagement.framework */,
+				46FFA91BCF96D58DDF3B5D45 /* libPods-88-Mac通知.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86FDA2D01F20525400FB918E = {
+			isa = PBXGroup;
+			children = (
+				86FDA2DB1F20525500FB918E /* 88-Mac通知 */,
+				86FDA2DA1F20525500FB918E /* Products */,
+				86F015B71F209188006DEA6F /* notify-helper.xcodeproj */,
+				86F015BD1F20919A006DEA6F /* Frameworks */,
+				A82626B160AE33617D3193E0 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		86FDA2DA1F20525500FB918E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86FDA2D91F20525500FB918E /* 88-Mac通知.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86FDA2DB1F20525500FB918E /* 88-Mac通知 */ = {
+			isa = PBXGroup;
+			children = (
+				86F015C01F20919D006DEA6F /* 88-Mac通知.entitlements */,
+				86FDA2F01F20529100FB918E /* AppDelegate.h */,
+				86FDA2F11F20529100FB918E /* AppDelegate.m */,
+				866F47541F20CDBA007CEF34 /* CFNotifyHandleTool.h */,
+				866F47551F20CDBA007CEF34 /* CFNotifyHandleTool.m */,
+				86FDA2F21F20529100FB918E /* PopContentViewController.h */,
+				86FDA2F31F20529100FB918E /* PopContentViewController.m */,
+				86F28B0C1F22198200D8E4DE /* SettingWindowController.h */,
+				86F28B0D1F22198200D8E4DE /* SettingWindowController.m */,
+				86F28B1B1F25B85700D8E4DE /* SettingWindowController.storyboard */,
+				86F28B1D1F25B9A400D8E4DE /* SettingViewController.h */,
+				86F28B1E1F25B9A400D8E4DE /* SettingViewController.m */,
+				86F28B221F25F68800D8E4DE /* AboutViewController.h */,
+				86F28B231F25F68800D8E4DE /* AboutViewController.m */,
+				86F28AF91F21F92C00D8E4DE /* NSLabel.h */,
+				86F28AFA1F21F92C00D8E4DE /* NSLabel.m */,
+				86F28AFC1F22039D00D8E4DE /* NSLineView.h */,
+				86F28AFD1F22039D00D8E4DE /* NSLineView.m */,
+				866F47511F20C51D007CEF34 /* NSString+extension.h */,
+				866F47521F20C51D007CEF34 /* NSString+extension.m */,
+				8614D29E1F21E71D00BD6E52 /* CFConsts.h */,
+				86FDA2E51F20525500FB918E /* Assets.xcassets */,
+				86FDA2EA1F20525500FB918E /* Info.plist */,
+				86FDA2DF1F20525500FB918E /* Supporting Files */,
+			);
+			path = "88-Mac通知";
+			sourceTree = "<group>";
+		};
+		86FDA2DF1F20525500FB918E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				86FDA2FB1F2052A200FB918E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A82626B160AE33617D3193E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23007B410A9856505FB1EA15 /* Pods-88-Mac通知.debug.xcconfig */,
+				60510EE9C46B073056A7B306 /* Pods-88-Mac通知.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86FDA2D81F20525500FB918E /* 88-Mac通知 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86FDA2ED1F20525500FB918E /* Build configuration list for PBXNativeTarget "88-Mac通知" */;
+			buildPhases = (
+				FA807CCAD1330041D98EA3DA /* [CP] Check Pods Manifest.lock */,
+				86FDA2D51F20525500FB918E /* Sources */,
+				86FDA2D61F20525500FB918E /* Frameworks */,
+				86FDA2D71F20525500FB918E /* Resources */,
+				86F015C11F2091AC006DEA6F /* Copy Files */,
+				A95A92E73B4C1DEF18592286 /* [CP] Embed Pods Frameworks */,
+				6F2978AA50A770DD0F6C2FA7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "88-Mac通知";
+			productName = "88-Mac通知";
+			productReference = 86FDA2D91F20525500FB918E /* 88-Mac通知.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86FDA2D11F20525400FB918E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "于传峰";
+				TargetAttributes = {
+					86FDA2D81F20525500FB918E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = FUC4HXX44A;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 86FDA2D41F20525400FB918E /* Build configuration list for PBXProject "88-Mac通知" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 86FDA2D01F20525400FB918E;
+			productRefGroup = 86FDA2DA1F20525500FB918E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 86F015B81F209188006DEA6F /* Products */;
+					ProjectRef = 86F015B71F209188006DEA6F /* notify-helper.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				86FDA2D81F20525500FB918E /* 88-Mac通知 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		86F015BC1F209189006DEA6F /* notify-helper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "notify-helper.app";
+			remoteRef = 86F015BB1F209189006DEA6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86FDA2D71F20525500FB918E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FDA2E61F20525500FB918E /* Assets.xcassets in Resources */,
+				86F28B1C1F25B85700D8E4DE /* SettingWindowController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F2978AA50A770DD0F6C2FA7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-88-Mac通知/Pods-88-Mac通知-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A95A92E73B4C1DEF18592286 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-88-Mac通知/Pods-88-Mac通知-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA807CCAD1330041D98EA3DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86FDA2D51F20525500FB918E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86F28B121F221AAE00D8E4DE /* NSLabel.m in Sources */,
+				86F28B111F221AA500D8E4DE /* SettingWindowController.m in Sources */,
+				86FDA2F71F20529100FB918E /* AppDelegate.m in Sources */,
+				86FDA2FC1F2052A200FB918E /* main.m in Sources */,
+				86F28AFE1F22039D00D8E4DE /* NSLineView.m in Sources */,
+				86F28B1F1F25B9A400D8E4DE /* SettingViewController.m in Sources */,
+				86F28B241F25F68800D8E4DE /* AboutViewController.m in Sources */,
+				866F47561F20CDBA007CEF34 /* CFNotifyHandleTool.m in Sources */,
+				86FDA2F81F20529100FB918E /* PopContentViewController.m in Sources */,
+				866F47531F20C51D007CEF34 /* NSString+extension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		86FDA2EB1F20525500FB918E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		86FDA2EC1F20525500FB918E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		86FDA2EE1F20525500FB918E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23007B410A9856505FB1EA15 /* Pods-88-Mac通知.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "88-Mac通知/88-Mac通知.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "88-Mac通知/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yuchuanfeng.-8-Mac--";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		86FDA2EF1F20525500FB918E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60510EE9C46B073056A7B306 /* Pods-88-Mac通知.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "88-Mac通知/88-Mac通知.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "88-Mac通知/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "yuchuanfeng.-8-Mac--";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86FDA2D41F20525400FB918E /* Build configuration list for PBXProject "88-Mac通知" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FDA2EB1F20525500FB918E /* Debug */,
+				86FDA2EC1F20525500FB918E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86FDA2ED1F20525500FB918E /* Build configuration list for PBXNativeTarget "88-Mac通知" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86FDA2EE1F20525500FB918E /* Debug */,
+				86FDA2EF1F20525500FB918E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 86FDA2D11F20525400FB918E /* Project object */;
+}

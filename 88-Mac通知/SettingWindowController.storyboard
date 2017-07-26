@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G24b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zju-AQ-VTM">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="mxK-tv-2WV">
+            <objects>
+                <windowController storyboardIdentifier="SettingWindowController" showSeguePresentationStyle="single" id="Zju-AQ-VTM" customClass="SettingWindowController" sceneMemberID="viewController">
+                    <window key="window" title="偏好设置" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Cea-u8-r3t">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="300" height="500"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                    </window>
+                    <connections>
+                        <segue destination="fTl-Dt-jwn" kind="relationship" relationship="window.shadowedContentViewController" id="Qx5-U6-Bkd"/>
+                    </connections>
+                </windowController>
+                <customObject id="aKP-Qv-HVH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60.5" y="112"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="2cf-6c-0PW">
+            <objects>
+                <windowController storyboardIdentifier="AboutWindowController" id="e8D-2n-rsO" sceneMemberID="viewController">
+                    <window key="window" title="关于" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="pfN-UE-ufa">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                    </window>
+                    <connections>
+                        <segue destination="eFe-hT-S1o" kind="relationship" relationship="window.shadowedContentViewController" id="Lq9-eB-vL5"/>
+                    </connections>
+                </windowController>
+                <customObject id="6nK-4d-KiY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-72" y="656"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="LVa-sG-Ibc">
+            <objects>
+                <viewController id="eFe-hT-S1o" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" id="Sm8-OL-WbV">
+                        <rect key="frame" x="0.0" y="0.0" width="268" height="192"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i07-Hd-nTq">
+                                <rect key="frame" x="109" y="122" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Hud-0F-iGY"/>
+                                    <constraint firstAttribute="height" constant="50" id="smY-rD-5aP"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="work" id="LTO-51-Odb"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJX-kg-Sj0">
+                                <rect key="frame" x="81" y="86" width="106" height="24"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Work Hard" usesSingleLineMode="YES" id="LkE-VK-XoQ">
+                                    <font key="font" metaFont="systemBold" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghi-jB-omX">
+                                <rect key="frame" x="109" y="57" width="50" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version" id="UBV-U5-wa9">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbC-DF-gtf">
+                                <rect key="frame" x="65" y="23" width="139" height="14"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Copyright © 2017 Dev.Yu." id="ybC-fH-9QR">
+                                    <font key="font" metaFont="system" size="11"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ghi-jB-omX" firstAttribute="top" secondItem="tJX-kg-Sj0" secondAttribute="bottom" constant="12" id="723-L7-zb9"/>
+                            <constraint firstItem="MbC-DF-gtf" firstAttribute="top" secondItem="ghi-jB-omX" secondAttribute="bottom" constant="20" id="7UC-SQ-eIc"/>
+                            <constraint firstItem="i07-Hd-nTq" firstAttribute="top" secondItem="Sm8-OL-WbV" secondAttribute="top" constant="20" id="MWu-7q-n4e"/>
+                            <constraint firstItem="tJX-kg-Sj0" firstAttribute="top" secondItem="i07-Hd-nTq" secondAttribute="bottom" constant="12" id="P9K-VK-gAO"/>
+                            <constraint firstItem="tJX-kg-Sj0" firstAttribute="centerX" secondItem="Sm8-OL-WbV" secondAttribute="centerX" id="YLn-81-cbh"/>
+                            <constraint firstItem="ghi-jB-omX" firstAttribute="centerX" secondItem="Sm8-OL-WbV" secondAttribute="centerX" id="bms-QI-MEn"/>
+                            <constraint firstItem="i07-Hd-nTq" firstAttribute="centerX" secondItem="Sm8-OL-WbV" secondAttribute="centerX" id="cCH-sF-PRN"/>
+                            <constraint firstItem="MbC-DF-gtf" firstAttribute="centerX" secondItem="Sm8-OL-WbV" secondAttribute="centerX" id="xFa-0l-TPh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bundleNameLabel" destination="tJX-kg-Sj0" id="yVi-4b-MmM"/>
+                        <outlet property="rightLabel" destination="MbC-DF-gtf" id="6ct-ts-oL1"/>
+                        <outlet property="verLabel" destination="ghi-jB-omX" id="Zvv-3S-1m7"/>
+                    </connections>
+                </viewController>
+                <customObject id="mld-jg-90m" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="578" y="593"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="dMT-KV-06o">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="fTl-Dt-jwn" customClass="SettingViewController" sceneMemberID="viewController">
+                    <view key="view" id="laf-KO-lun">
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="431"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="9uf-Fv-47c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="614.5" y="176.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="work" width="245.75999450683594" height="245.75999450683594"/>
+    </resources>
+</document>
