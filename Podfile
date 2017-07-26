@@ -3,7 +3,7 @@
 
 pod 'Masonry'
 
-target '88-Mac通知' do
+target 'Work hard' do
 # pod 'AFNetworking', '~> 3.0'
 # pod 'Masonry'
 # pod 'MJExtension'

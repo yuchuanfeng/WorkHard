@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:88-Mac通知.xcodeproj">
+      location = "group:/Users/yuchuanfeng/Documents/github/Work Hard/Work hard.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Work hard.xcodeproj">
    </FileRef>
 </Workspace>

@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-88-Mac通知.xcscheme</key>
+		<key>Pods-Work hard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>BDFDF6120B58243147BDBF854C7CCAE6</key>
+		<key>C928DF2FDD93545062C8196C599DD0CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C928DF2FDD93545062C8196C599DD0CA</key>
+		<key>E467F989C6962FF9E5A440C00E6E84C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
