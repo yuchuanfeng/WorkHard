@@ -2,13 +2,15 @@
 ### 上班时间记录，下班通知提醒
 
 ### >  上班时间开始是以`电脑解屏`时间或者电脑从`睡眠状态唤醒`时间来记录的
+
 ![](https://github.com/yuchuanfeng/WorkHard/blob/master/picktures/Snip20170727_4.png)
 
 ### > 如果记录的时间不准确可以手动修改上班时间
 ![](https://github.com/yuchuanfeng/WorkHard/blob/master/picktures/Snip20170727_5.png)
 
 ### > 默认的设置时间都是按照我现在公司上班时间定的，这些都是可以手动设置的
-![](https://github.com/yuchuanfeng/WorkHard/blob/master/picktures/Snip20170727_6.png)
+
+<img src="./picktures/Snip20170727_6.png" width = "500"  alt="" align=center />
 
 ### > 设置说明
 - **最早打卡时间、最晚打卡时间：** 弹性上下班时间的正常打卡时间段，下班时间段就是这个时间段加上工作时长
