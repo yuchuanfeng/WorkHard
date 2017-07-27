@@ -17,13 +17,14 @@
 
 static CGFloat cellHeight = 50;
 static CGFloat borderMargin = 10;
-static CGFloat contentLabelWidth = 200;
+static CGFloat contentLabelWidth = 150;
 
 static NSInteger fontSize = 13;
 
 @interface PopContentViewController ()
 @property (weak) IBOutlet NSView *topView;
 @property ( nonatomic, weak) NSTextField* startWorkTimeLabel;
+@property ( nonatomic, weak) NSTextField* startWorkTipLabel;
 @property ( nonatomic, weak) NSTextField* endWorkTimeLabel;
 
 @property (weak) IBOutlet NSDatePicker *datePicker;
@@ -31,6 +32,9 @@ static NSInteger fontSize = 13;
 
 @property ( nonatomic, strong) SettingWindowController* settingWin;
 @property ( nonatomic, strong) NSWindowController* aboutWin;
+
+@property( nonatomic, copy) NSString* tipStr;
+@property ( nonatomic, strong) NSColor* tipColor;
 
 @end
 
@@ -119,12 +123,14 @@ static NSInteger fontSize = 13;
     self.datePicker.alphaValue = 0.01;
     self.changeTimeButton.hidden = YES;
     self.startWorkTimeLabel.hidden = NO;
+    self.startWorkTipLabel.hidden = NO;
 }
 
 - (void)topChangeState {
     self.datePicker.alphaValue = 1;
     self.changeTimeButton.hidden = NO;
     self.startWorkTimeLabel.hidden = YES;
+    self.startWorkTipLabel.hidden = YES;
 }
 
 - (void)viewWillAppear {
@@ -132,6 +138,8 @@ static NSInteger fontSize = 13;
     
     self.endWorkTimeLabel.stringValue = self.endTimeStr ? : @"0";
     self.startWorkTimeLabel.stringValue = self.timeStr ? : @"0";
+    self.startWorkTipLabel.stringValue = self.tipStr;
+    self.startWorkTipLabel.textColor = self.tipColor;
 }
 
 
@@ -143,6 +151,55 @@ static NSInteger fontSize = 13;
 - (void)setTimeStr:(NSString *)timeStr {
     _timeStr = timeStr;
     self.startWorkTimeLabel.stringValue = timeStr ? : @"0";
+}
+
+- (void)setTipType:(PopTipType)tipType {
+    _tipType = tipType;
+    NSString* tipStr = @"";
+    NSColor* color;
+    switch (tipType) {
+        case PopTipTypeNormal:
+            tipStr = @"正常";
+            color = [NSColor blueColor];
+            break;
+        case PopTipTypeTooLate:
+            tipStr = @"太晚了";
+            color = [NSColor redColor];
+            break;
+        case PopTipTypeEarly:
+            tipStr = @"好早";
+            color = [NSColor yellowColor];
+            break;
+        case PopTipTypeNotWrok:
+            tipStr = @"休息";
+            color = [NSColor greenColor];
+            break;
+        case PopTipTypeAbsend:
+            tipStr = @"迟到了";
+            color = [NSColor orangeColor];
+            break;
+        default:
+            return;
+    }
+    self.tipStr = [NSString stringWithFormat:@"[%@]", tipStr];;
+    self.tipColor = color;
+//    self.startWorkTipLabel.stringValue = [NSString stringWithFormat:@"[%@]", tipStr];
+//    self.startWorkTipLabel.textColor = color;
+}
+
+- (NSString *)tipStr {
+    if (!_tipStr) {
+        _tipStr = @"[正常]";
+    }
+    
+    return _tipStr;
+}
+
+- (NSColor *)tipColor {
+    if (!_tipColor) {
+        _tipColor = [NSColor blueColor];
+    }
+    return _tipColor;
 }
 
 - (void)setupSubViews {
@@ -181,6 +238,17 @@ static NSInteger fontSize = 13;
         make.centerY.equalTo(startWorkLabel);
         make.left.equalTo(startWorkLabel.right).offset(borderMargin);
         make.width.equalTo(contentLabelWidth);
+    }];
+    
+    NSTextField* startWorkTipLabel = [NSLabel textFieldWithString:@"[正常]"];
+    [startWorkTipLabel sizeToFit];
+    self.startWorkTipLabel = startWorkTipLabel;
+    [topView addSubview:startWorkTipLabel];
+    startWorkTipLabel.font = [NSFont systemFontOfSize:fontSize];
+    startWorkTipLabel.textColor = [NSColor blueColor];
+    [startWorkTipLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(startWorkTimeLabel);
+        make.left.equalTo(startWorkTimeLabel.right).offset(borderMargin);
     }];
     
     NSDatePicker* datePicker = [[NSDatePicker alloc] init];

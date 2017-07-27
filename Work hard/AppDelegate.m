@@ -80,7 +80,7 @@
     PopContentViewController* popoverVC = [[PopContentViewController alloc] init];
     self.popoverVC = popoverVC;
     _popoverView.contentViewController = popoverVC;
-    _popoverView.contentSize = CGSizeMake(330, 140);
+    _popoverView.contentSize = CGSizeMake(310, 140);
     
     __weak typeof(self) weakSelf = self;
     [NSEvent addGlobalMonitorForEventsMatchingMask:NSEventMaskLeftMouseDown handler:^(NSEvent * _Nonnull event) {

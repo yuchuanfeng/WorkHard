@@ -85,7 +85,7 @@ static CFNotifyHandleTool* _sharedInstance;
     [calendar getEra:NULL yearForWeekOfYear:NULL weekOfYear:NULL weekday:&currentWeekDay fromDate:currentDate];
     
     if (!self.overTime && (currentWeekDay == 1 || currentWeekDay == 7)) {
-        popVC.timeStr = @"今天休息。。。";
+        popVC.tipType = PopTipTypeNotWrok;
         return;
     }
     
@@ -98,13 +98,13 @@ static CFNotifyHandleTool* _sharedInstance;
     
     NSTimeInterval earliestAvailabilityTimeInterval = [[self.hourFormatter dateFromString:[self.earliestAvailabilityTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
     if (currentTimeInterval < earliestAvailabilityTimeInterval) {
-        popVC.timeStr = @"太早了。。。";
+        popVC.tipType = PopTipTypeEarly;
         return;
     }
     
     NSTimeInterval latestAvailabilityTimeInterval = [[self.hourFormatter dateFromString:[self.latestAvailabilityTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
     if (currentTimeInterval > latestAvailabilityTimeInterval) {
-        popVC.timeStr = @"太晚了。。。";
+        popVC.tipType = PopTipTypeTooLate;
         return;
     }
     
@@ -127,22 +127,21 @@ static CFNotifyHandleTool* _sharedInstance;
     NSTimeInterval workTime = self.workHour * 60 * 60;
 #endif
     NSTimeInterval workEndTime = currentTimeInterval + workTime;
-    NSString* tipStr = @"正常";
+    popVC.tipType = PopTipTypeNormal;
     if (currentTimeInterval < earliestTakeCardTimeInterval) { // 来早了
-        workEndTime = earliestTakeCardTimeInterval + workTime;
-        tipStr = @"来的好早";
+//        workEndTime = earliestTakeCardTimeInterval + workTime;
+        popVC.tipType = PopTipTypeEarly;
     }else if (currentTimeInterval > absentTimeInterval){ // 缺席了
-        workEndTime = latestTakeCardTimeInterval + workTime;
-        tipStr = @"来的太晚";
+//        workEndTime = latestTakeCardTimeInterval + workTime;
+        popVC.tipType = PopTipTypeTooLate;
     }else if (currentTimeInterval > latestTakeCardTimeInterval) { // 迟到了
-        tipStr = @"迟到了";
+        popVC.tipType = PopTipTypeAbsend;
     }
 
     
     NSDate* workEndDate = [NSDate dateWithTimeIntervalSince1970:workEndTime];
     
-    NSString* timeStr = [self.dateFormatter stringFromDate:startDate];
-    popVC.timeStr = [NSString stringWithFormat:@"%@ [%@]", timeStr, tipStr];
+    popVC.timeStr = [self.dateFormatter stringFromDate:startDate];
     NSString* endTimeStr = [self.dateFormatter stringFromDate:workEndDate];
     popVC.endTimeStr = endTimeStr;
     
