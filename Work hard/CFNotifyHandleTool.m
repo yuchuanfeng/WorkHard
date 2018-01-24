@@ -143,6 +143,8 @@ static CFNotifyHandleTool* _sharedInstance;
         popVC.tipType = PopTipTypeTooLate;
     }else if (currentTimeInterval > latestTakeCardTimeInterval) { // 迟到了
         popVC.tipType = PopTipTypeAbsend;
+    }else {
+        popVC.tipType = PopTipTypeNormal;
     }
 
     
