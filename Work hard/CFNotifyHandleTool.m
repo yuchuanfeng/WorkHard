@@ -88,23 +88,25 @@ static CFNotifyHandleTool* _sharedInstance;
         popVC.tipType = PopTipTypeNotWrok;
         return;
     }
+    NSTimeInterval earliestAvailabilityTimeInterval = [[self.hourFormatter dateFromString:[self.earliestAvailabilityTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
+    NSTimeInterval latestAvailabilityTimeInterval = [[self.hourFormatter dateFromString:[self.latestAvailabilityTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
     
     NSTimeInterval lastTime = [[NSUserDefaults standardUserDefaults] doubleForKey:LAST_OPEN_TIME];
     NSDate* lastDate = [NSDate dateWithTimeIntervalSince1970:lastTime];
-    if (lastTime > 0 && [calendar isDateInToday:lastDate]) {
+    BOOL insideNormalTime = lastTime > earliestAvailabilityTimeInterval && lastTime < latestAvailabilityTimeInterval;
+    if (lastTime > 0 && [calendar isDateInToday:lastDate] && insideNormalTime) {
         [self setNotificationWithStartDate:lastDate popVC:popVC];
         return;
     }
     
-    NSTimeInterval earliestAvailabilityTimeInterval = [[self.hourFormatter dateFromString:[self.earliestAvailabilityTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
+    
     if (currentTimeInterval < earliestAvailabilityTimeInterval) {
-        popVC.tipType = PopTipTypeEarly;
+        popVC.tipType = PopTipTypeInvalid;
         return;
     }
     
-    NSTimeInterval latestAvailabilityTimeInterval = [[self.hourFormatter dateFromString:[self.latestAvailabilityTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
     if (currentTimeInterval > latestAvailabilityTimeInterval) {
-        popVC.tipType = PopTipTypeTooLate;
+        popVC.tipType = PopTipTypeInvalid;
         return;
     }
     
@@ -121,18 +123,23 @@ static CFNotifyHandleTool* _sharedInstance;
     NSTimeInterval earliestTakeCardTimeInterval = [[self.hourFormatter dateFromString:[self.earliestTakeCardTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
     NSTimeInterval absentTimeInterval = [[self.hourFormatter dateFromString:[self.absentTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
     NSTimeInterval latestTakeCardTimeInterval = [[self.hourFormatter dateFromString:[self.latestTakeCardTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
-#if defined(DEBUG)||defined(_DEBUG)
-    NSTimeInterval workTime = 5;
-#else
+    
+    NSTimeInterval savedTimeInterval = currentTimeInterval;
+    if (savedTimeInterval < earliestTakeCardTimeInterval) {
+        savedTimeInterval = earliestTakeCardTimeInterval;
+    }else if (savedTimeInterval > absentTimeInterval){
+        savedTimeInterval = latestTakeCardTimeInterval;
+    }
+//#if defined(DEBUG)||defined(_DEBUG)
+//    NSTimeInterval workTime = 5;
+//#else
     NSTimeInterval workTime = self.workHour * 60 * 60;
-#endif
-    NSTimeInterval workEndTime = currentTimeInterval + workTime;
+//#endif
+    NSTimeInterval workEndTime = savedTimeInterval + workTime;
     popVC.tipType = PopTipTypeNormal;
     if (currentTimeInterval < earliestTakeCardTimeInterval) { // 来早了
-//        workEndTime = earliestTakeCardTimeInterval + workTime;
         popVC.tipType = PopTipTypeEarly;
     }else if (currentTimeInterval > absentTimeInterval){ // 缺席了
-//        workEndTime = latestTakeCardTimeInterval + workTime;
         popVC.tipType = PopTipTypeTooLate;
     }else if (currentTimeInterval > latestTakeCardTimeInterval) { // 迟到了
         popVC.tipType = PopTipTypeAbsend;

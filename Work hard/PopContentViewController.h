@@ -13,7 +13,8 @@ typedef NS_ENUM(NSUInteger, PopTipType) {
     PopTipTypeTooLate, // 太晚了
     PopTipTypeEarly, // 太早了
     PopTipTypeNotWrok, // 休息时间
-    PopTipTypeAbsend // 迟到
+    PopTipTypeAbsend, // 迟到
+    PopTipTypeInvalid // 无效
 };
 
 @interface PopContentViewController : NSViewController

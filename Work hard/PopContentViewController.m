@@ -178,6 +178,10 @@ static NSInteger fontSize = 13;
             tipStr = @"迟到了";
             color = [NSColor orangeColor];
             break;
+        case PopTipTypeInvalid:
+            tipStr = @"无效时间";
+            color = [NSColor blackColor];
+            break;
         default:
             return;
     }

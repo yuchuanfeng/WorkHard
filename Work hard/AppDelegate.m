@@ -99,10 +99,10 @@
                                                         selector:@selector(sleepMethod:)
                                                             name:@"com.apple.screenIsUnlocked"
                                                           object:nil];
-    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
-                                                           selector:@selector(sleepMethod:)
-                                                               name:NSWorkspaceDidWakeNotification
-                                                             object:nil];
+//    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+//                                                           selector:@selector(sleepMethod:)
+//                                                               name:NSWorkspaceDidWakeNotification
+//                                                             object:nil];
 //    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
 //                                                           selector:@selector(sleepMethod:)
 //                                                               name:NSWorkspaceScreensDidWakeNotification

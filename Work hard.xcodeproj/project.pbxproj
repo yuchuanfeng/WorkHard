@@ -212,7 +212,7 @@
 				TargetAttributes = {
 					86FDA2D81F20525500FB918E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = FUC4HXX44A;
+						DevelopmentTeam = 84JG8K95UQ;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -435,7 +435,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Work hard/Work hard.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 84JG8K95UQ;
 				INFOPLIST_FILE = "$(SRCROOT)/Work hard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yuchuanfeng.-8-Mac--";
@@ -452,7 +452,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Work hard/Work hard.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 84JG8K95UQ;
 				INFOPLIST_FILE = "$(SRCROOT)/Work hard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yuchuanfeng.-8-Mac--";
