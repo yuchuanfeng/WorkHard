@@ -9,6 +9,7 @@
 #import "CFNotifyHandleTool.h"
 #import "NSString+extension.h"
 #import "CFConsts.h"
+#import <AFNetworking.h>
 
 
 
@@ -84,37 +85,64 @@ static CFNotifyHandleTool* _sharedInstance;
 //    [calendar getHour:&currentHour minute:&currentMin second:&currentSecond nanosecond:NULL fromDate:currentDate];
     [calendar getEra:NULL yearForWeekOfYear:NULL weekOfYear:NULL weekday:&currentWeekDay fromDate:currentDate];
     
-    if (!self.overTime && (currentWeekDay == 1 || currentWeekDay == 7)) {
-        popVC.tipType = PopTipTypeNotWrok;
-        return;
-    }
-    NSTimeInterval earliestAvailabilityTimeInterval = [[self.hourFormatter dateFromString:[self.earliestAvailabilityTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
-    NSTimeInterval latestAvailabilityTimeInterval = [[self.hourFormatter dateFromString:[self.latestAvailabilityTime appendingCurrentDate:self.dayFormatter]] timeIntervalSince1970];
+    // 网络请求
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    NSTimeInterval lastTime = [[NSUserDefaults standardUserDefaults] doubleForKey:LAST_OPEN_TIME];
-    NSDate* lastDate = [NSDate dateWithTimeIntervalSince1970:lastTime];
-    BOOL insideNormalTime = lastTime > earliestAvailabilityTimeInterval && lastTime < latestAvailabilityTimeInterval;
-    if (lastTime > 0 && [calendar isDateInToday:lastDate] && insideNormalTime) {
-        [self setNotificationWithStartDate:lastDate popVC:popVC];
-        return;
-    }
+    NSURL *URL = [NSURL URLWithString:@"http://holiday-api.leanapp.cn/api/v1/work"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
-    
-    if (currentTimeInterval < earliestAvailabilityTimeInterval) {
-        popVC.tipType = PopTipTypeInvalid;
-        return;
-    }
-    
-    if (currentTimeInterval > latestAvailabilityTimeInterval) {
-        popVC.tipType = PopTipTypeInvalid;
-        return;
-    }
-    
-    
-    [self setNotificationWithStartDate:currentDate popVC:popVC];
-    
-    [[NSUserDefaults standardUserDefaults] setDouble:currentTimeInterval forKey:LAST_OPEN_TIME];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    typeof(self) weakSelf = self;
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, NSDictionary* dict, NSError *error) {
+        BOOL isError = NO;
+        if (error) {
+            NSLog(@"Error: %@", error);
+            isError = YES;
+        } else {
+            NSLog(@"%@", dict);
+            if([dict[@"code"] intValue] == 200){
+                
+            }else {
+                isError = YES;
+            }
+        }
+        BOOL isWorkDay = [dict[@"data"][@"shoudWork"] isEqualToString:@"Y"];
+        if (!weakSelf.overTime && !isWorkDay) {
+            popVC.tipType = PopTipTypeNotWrok;
+            return;
+        }
+        
+        popVC.netWorkError = isError;
+        
+        NSTimeInterval earliestAvailabilityTimeInterval = [[weakSelf.hourFormatter dateFromString:[weakSelf.earliestAvailabilityTime appendingCurrentDate:weakSelf.dayFormatter]] timeIntervalSince1970];
+        NSTimeInterval latestAvailabilityTimeInterval = [[weakSelf.hourFormatter dateFromString:[weakSelf.latestAvailabilityTime appendingCurrentDate:weakSelf.dayFormatter]] timeIntervalSince1970];
+        
+        NSTimeInterval lastTime = [[NSUserDefaults standardUserDefaults] doubleForKey:LAST_OPEN_TIME];
+        NSDate* lastDate = [NSDate dateWithTimeIntervalSince1970:lastTime];
+        BOOL insideNormalTime = lastTime > earliestAvailabilityTimeInterval && lastTime < latestAvailabilityTimeInterval;
+        if (lastTime > 0 && [calendar isDateInToday:lastDate] && insideNormalTime) {
+            [weakSelf setNotificationWithStartDate:lastDate popVC:popVC];
+            return;
+        }
+        
+        
+        if (currentTimeInterval < earliestAvailabilityTimeInterval) {
+            popVC.tipType = PopTipTypeInvalid;
+            return;
+        }
+        
+        if (currentTimeInterval > latestAvailabilityTimeInterval) {
+            popVC.tipType = PopTipTypeInvalid;
+            return;
+        }
+        
+        
+        [weakSelf setNotificationWithStartDate:currentDate popVC:popVC];
+        
+        [[NSUserDefaults standardUserDefaults] setDouble:currentTimeInterval forKey:LAST_OPEN_TIME];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }];
+    [dataTask resume];
 }
 
 - (void)setNotificationWithStartDate:(NSDate *)startDate popVC:(PopContentViewController *)popVC{

@@ -14,11 +14,14 @@ typedef NS_ENUM(NSUInteger, PopTipType) {
     PopTipTypeEarly, // 太早了
     PopTipTypeNotWrok, // 休息时间
     PopTipTypeAbsend, // 迟到
-    PopTipTypeInvalid // 无效
+    PopTipTypeInvalid, // 无效
+    PopTipTypeNetworkError // 网络请求错误
 };
 
 @interface PopContentViewController : NSViewController
 @property( nonatomic, copy) NSString* timeStr;
 @property( nonatomic, copy) NSString* endTimeStr;
 @property( nonatomic, assign) PopTipType tipType;
+
+@property ( nonatomic, assign) BOOL netWorkError;
 @end

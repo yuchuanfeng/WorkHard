@@ -4,7 +4,7 @@
 pod 'Masonry'
 
 target 'Work hard' do
-# pod 'AFNetworking', '~> 3.0'
+pod 'AFNetworking', '~> 3.0'
 # pod 'Masonry'
 # pod 'MJExtension'
 end

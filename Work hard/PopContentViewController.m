@@ -36,9 +36,20 @@ static NSInteger fontSize = 13;
 @property( nonatomic, copy) NSString* tipStr;
 @property ( nonatomic, strong) NSColor* tipColor;
 
+
+
 @end
 
 @implementation PopContentViewController
+
+- (void)setNetWorkError:(BOOL)netWorkError{
+    _netWorkError = netWorkError;
+    if (netWorkError) {
+        self.startWorkTimeLabel.textColor = [NSColor redColor];
+    }else {
+        self.startWorkTimeLabel.textColor = [NSColor blackColor];
+    }
+}
 
 - (void)loadView {
     self.view = [[NSView alloc] init];
@@ -182,6 +193,10 @@ static NSInteger fontSize = 13;
             tipStr = @"无效时间";
             color = [NSColor blackColor];
             break;
+        case PopTipTypeNetworkError:
+            tipStr = @"网络请求错误";
+            color = [NSColor redColor];
+            break;
         default:
             return;
     }
@@ -243,6 +258,11 @@ static NSInteger fontSize = 13;
         make.left.equalTo(startWorkLabel.right).offset(borderMargin);
         make.width.equalTo(contentLabelWidth);
     }];
+    if (self.netWorkError) {
+        self.startWorkTimeLabel.textColor = [NSColor redColor];
+    }else {
+        self.startWorkTimeLabel.textColor = [NSColor blackColor];
+    }
     
     NSTextField* startWorkTipLabel = [NSLabel textFieldWithString:@"[正常]"];
     [startWorkTipLabel sizeToFit];

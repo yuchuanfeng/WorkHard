@@ -237,7 +237,7 @@ static CGFloat margin = 10;
     }];
     
     // 周六、日提醒
-    NSLabel* overTimeLabel = [NSLabel textFieldWithString:@"周六、日提醒: "];
+    NSLabel* overTimeLabel = [NSLabel textFieldWithString:@"工作日外提醒: "];
     [self.view addSubview:overTimeLabel];
     //    self.startWorkLabel = startWorkLabel;
     overTimeLabel.alignment = NSTextAlignmentRight;
@@ -251,7 +251,7 @@ static CGFloat margin = 10;
         make.height.equalTo(contentLabelHeight);
     }];
     
-    NSButton* overTimeButton = [NSButton checkboxWithTitle:@"周六、日加班时使用" target:self action:@selector(overTimeButtonSelected:)];
+    NSButton* overTimeButton = [NSButton checkboxWithTitle:@"工作日外加班时使用" target:self action:@selector(overTimeButtonSelected:)];
     self.overTimeButton = overTimeButton;
     [self.view addSubview:overTimeButton];
     [overTimeButton sizeToFit];
