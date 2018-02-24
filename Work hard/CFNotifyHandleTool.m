@@ -106,13 +106,14 @@ static CFNotifyHandleTool* _sharedInstance;
                 isError = YES;
             }
         }
+        
+        popVC.netWorkError = isError;
+        
         BOOL isWorkDay = [dict[@"data"][@"shoudWork"] isEqualToString:@"Y"];
-        if (!weakSelf.overTime && !isWorkDay) {
+        if (!isError && !weakSelf.overTime && !isWorkDay) {
             popVC.tipType = PopTipTypeNotWrok;
             return;
         }
-        
-        popVC.netWorkError = isError;
         
         NSTimeInterval earliestAvailabilityTimeInterval = [[weakSelf.hourFormatter dateFromString:[weakSelf.earliestAvailabilityTime appendingCurrentDate:weakSelf.dayFormatter]] timeIntervalSince1970];
         NSTimeInterval latestAvailabilityTimeInterval = [[weakSelf.hourFormatter dateFromString:[weakSelf.latestAvailabilityTime appendingCurrentDate:weakSelf.dayFormatter]] timeIntervalSince1970];
