@@ -109,7 +109,7 @@ static CFNotifyHandleTool* _sharedInstance;
         
         popVC.netWorkError = isError;
         
-        BOOL isWorkDay = [dict[@"data"][@"shoudWork"] isEqualToString:@"Y"];
+        BOOL isWorkDay = [dict[@"data"][@"shouldWork"] isEqualToString:@"Y"];
         if (!isError && !weakSelf.overTime && !isWorkDay) {
             popVC.tipType = PopTipTypeNotWrok;
             return;
